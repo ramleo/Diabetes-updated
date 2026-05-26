@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: diabetes-updated
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    region: oregon
+    envVars:
+      - key: PORT
+        value: 8000
+    healthCheckPath: /health
+    autoDeploy: true
